@@ -9,15 +9,16 @@
   --text: #2a2522;
   --text-muted: #5f5853;
   --border: #e4dcd5;
-  --primary: #a8323f;        /* 北榮衛教手冊的紅色系 */
-  --primary-strong: #8a2431;
-  --primary-soft: #fbe9ea;
-  --accent: #0f6e6e;
-  --accent-soft: #e3f2f1;
+  --primary: #b3151c;        /* 心臟內科標誌紅 */
+  --primary-strong: #8e1016;
+  --primary-soft: #fcebeb;
+  --accent: #2e3192;         /* 三軍總醫院標誌藍 */
+  --accent-soft: #ecedf9;
+  --series-male: #4a4fc0;
+  --series-female: #c0262d;
+  --series-other: #b7aea8;
   --warn-bg: #fff6e0;
   --warn-border: #e0b44a;
-  --draft-bg: #eef2ff;
-  --draft-text: #3b3f8f;
   --shadow: 0 1px 2px rgb(0 0 0 / .05), 0 4px 16px rgb(0 0 0 / .05);
   --radius: 14px;
   --max: 760px;
@@ -33,15 +34,16 @@
     --text: #efe9e5;
     --text-muted: #b8afa9;
     --border: #3d3734;
-    --primary: #f08a95;
-    --primary-strong: #f6a8b0;
-    --primary-soft: #3a2427;
-    --accent: #6fcfc6;
-    --accent-soft: #1d3332;
+    --primary: #f2777c;
+    --primary-strong: #f7a0a3;
+    --primary-soft: #3a2224;
+    --accent: #a9acf5;
+    --accent-soft: #25264a;
+    --series-male: #7c81ea;
+    --series-female: #e5545a;
+    --series-other: #5c5450;
     --warn-bg: #352c16;
     --warn-border: #a2832e;
-    --draft-bg: #262a45;
-    --draft-text: #b8bdf5;
     --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 4px 16px rgb(0 0 0 / .25);
     color-scheme: dark;
   }
@@ -96,11 +98,9 @@ li { margin-bottom: .35rem; }
   display: flex; align-items: center; gap: .5rem;
   font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none;
 }
-.brand-mark {
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--primary); color: #fff;
-  display: grid; place-items: center; font-size: .95rem;
-}
+.brand img { width: 44px; height: 44px; border-radius: 50%; flex: 0 0 auto; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.3; }
+.brand-text small { font-size: .78rem; font-weight: 500; color: var(--text-muted); letter-spacing: .05em; }
 .nav-toggle {
   display: none;
   min-height: 44px; padding: 0 .9rem;
@@ -116,7 +116,7 @@ li { margin-bottom: .35rem; }
 .site-nav a:hover { background: var(--surface-2); }
 .site-nav a[aria-current="page"] { background: var(--primary-soft); color: var(--primary-strong); font-weight: 700; }
 
-@media (max-width: 960px) {
+@media (max-width: 1180px) {
   .nav-toggle { display: inline-flex; align-items: center; gap: .4rem; }
   .site-nav { display: none; width: 100%; }
   .site-nav.is-open { display: block; }
@@ -149,20 +149,6 @@ main.wide { max-width: 1000px; }
   background: var(--warn-bg); border-left: 5px solid var(--warn-border);
 }
 .callout.info { background: var(--primary-soft); border-left-color: var(--primary); }
-
-/* ---------- Source / review labels ---------- */
-section[data-source] { position: relative; }
-.source-tag {
-  display: inline-block; font-size: .78rem; line-height: 1.4;
-  padding: .15rem .55rem; border-radius: 999px; margin: 0 0 .4rem;
-  background: var(--surface-2); color: var(--text-muted); font-weight: 500;
-}
-section.needs-review {
-  background: var(--draft-bg); border-radius: var(--radius);
-  padding: .2rem 1.1rem 1rem; margin: 1.5rem 0;
-}
-section.needs-review > .source-tag { background: var(--draft-text); color: var(--draft-bg); margin-top: .9rem; }
-section.needs-review h2 { margin-top: .6rem; }
 
 /* ---------- Home ---------- */
 .hero {
@@ -315,11 +301,67 @@ details.faq .answer { padding: .9rem 1.1rem .3rem; }
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--surface-2); border-top: 1px solid var(--border);
-  padding: 1.6rem 16px 2rem; font-size: .92rem; color: var(--text-muted);
+  padding: 2rem 16px 2.2rem; font-size: .92rem; color: var(--text-muted); text-align: center;
 }
-.footer-inner { max-width: 1000px; margin: 0 auto; }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-logos { display: flex; justify-content: center; gap: 1rem; margin-bottom: .8rem; }
+.footer-logos img { width: 64px; height: 64px; border-radius: 50%; }
 .site-footer p { margin: .3rem 0; }
+.site-footer .copyright { margin-top: .9rem; padding-top: .9rem; border-top: 1px solid var(--border); }
 .site-footer strong { color: var(--text); }
+
+/* ---------- Data: stat tiles & charts ---------- */
+.stat-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: 1rem 0 1.5rem; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; box-shadow: var(--shadow); }
+.stat .stat-label { display: block; color: var(--text-muted); font-size: .95rem; }
+.stat .stat-value { display: block; font-size: 2.1rem; font-weight: 700; line-height: 1.3; color: var(--text); font-variant-numeric: tabular-nums; }
+.stat .stat-value small { font-size: 1rem; font-weight: 500; color: var(--text-muted); }
+.stat .stat-note { display: block; font-size: .88rem; color: var(--text-muted); }
+
+figure.chart { margin: 1.2rem 0 1.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.2rem 1rem; }
+figure.chart .chart-title { font-weight: 700; margin: 0 0 .2rem; }
+figure.chart .chart-sub { color: var(--text-muted); font-size: .92rem; margin: 0 0 1rem; }
+figure.chart figcaption { font-size: .82rem; color: var(--text-muted); margin-top: .8rem; line-height: 1.6; }
+
+.hbars { display: grid; gap: .9rem; }
+.hbar { display: grid; grid-template-columns: 3rem 1fr 4.6rem; align-items: center; gap: .6rem; position: relative; }
+.hbar .hbar-label { font-weight: 500; }
+.hbar .hbar-track { height: 28px; border-bottom: 1px solid var(--border); position: relative; }
+.hbar .hbar-fill { height: 100%; border-radius: 0 4px 4px 0; }
+.hbar .hbar-value { white-space: nowrap; font-weight: 700; font-variant-numeric: tabular-nums; }
+.hbar.male .hbar-fill { background: var(--series-male); }
+.hbar.female .hbar-fill { background: var(--series-female); }
+.axis { display: grid; grid-template-columns: 3rem 1fr 4.6rem; gap: .6rem; font-size: .78rem; color: var(--text-muted); }
+.axis .ticks { display: flex; justify-content: space-between; }
+
+.segbar { display: flex; height: 36px; gap: 2px; margin: .4rem 0 .6rem; }
+.segbar .seg { height: 100%; }
+.segbar .seg:first-child { border-radius: 4px 0 0 4px; }
+.segbar .seg:last-child { border-radius: 0 4px 4px 0; }
+.seg.ivs4 { background: var(--series-female); }
+.seg.other { background: var(--series-other); }
+.chart-legend { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-size: .92rem; color: var(--text); }
+.chart-legend span { display: inline-flex; align-items: center; gap: .4rem; }
+.chart-legend i { width: .8rem; height: .8rem; border-radius: 3px; display: inline-block; }
+
+[data-tip] { cursor: default; }
+.tooltip {
+  position: fixed; z-index: 200; pointer-events: none;
+  background: var(--text); color: var(--bg); font-size: .85rem; line-height: 1.5;
+  padding: .4rem .65rem; border-radius: 8px; max-width: 260px; box-shadow: var(--shadow);
+}
+.tooltip[hidden] { display: none; }
+
+/* ---------- Timeline ---------- */
+.timeline { list-style: none; padding: 0; margin: 1.2rem 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 15px; top: 6px; bottom: 6px; width: 3px; background: linear-gradient(var(--accent-soft), var(--primary)); border-radius: 2px; }
+.timeline li { position: relative; padding: 0 0 1.2rem 3rem; margin: 0; }
+.timeline li::before { content: attr(data-step); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--surface); border: 3px solid var(--primary); display: grid; place-items: center; font-weight: 700; font-size: .9rem; color: var(--primary); }
+.timeline strong { display: block; }
+.timeline span { color: var(--text-muted); font-size: .97rem; }
+
+.sources { font-size: .88rem; color: var(--text-muted); }
+.sources li { margin-bottom: .5rem; }
 
 /* ---------- Print ---------- */
 @media print {
@@ -327,7 +369,6 @@ details.faq .answer { padding: .9rem 1.1rem .3rem; }
   .site-header, .skip-link, .nav-toggle, .page-nav, .check-actions, .faq-tools, .choice-group { display: none !important; }
   details.faq { break-inside: avoid; }
   details.faq > .answer { display: block; }
-  section.needs-review { background: none; border: 1px dashed #999; }
   a { color: #000; }
   main { max-width: none; padding: 0; }
 }

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>遺傳｜認識法布瑞氏症</title>
+<title>遺傳｜認識法布瑞氏症｜三軍總醫院心臟內科</title>
 <meta name="description" content="法布瑞氏症是 X 染色體性聯遺傳：互動圖解父親或母親帶有致病基因時，兒子與女兒的遺傳機率。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/genetics.js" defer></script>
 </head>
@@ -17,18 +17,22 @@
 <a class="skip-link" href="#main">跳至主要內容</a>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">F</span>認識法布瑞氏症</a>
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-cardiology.png" alt="三軍總醫院心臟內科標誌" width="44" height="44">
+      <span class="brand-text">認識法布瑞氏症<small>三軍總醫院心臟內科</small></span>
+    </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">☰ 選單</button>
     <nav id="site-nav" class="site-nav" aria-label="主選單">
       <ul>
         <li><a href="index.html">首頁</a></li>
         <li><a href="about.html">認識疾病</a></li>
+        <li><a href="cardiac.html">心臟型</a></li>
         <li><a href="symptoms.html">症狀</a></li>
         <li><a href="genetics.html" aria-current="page">遺傳</a></li>
         <li><a href="diagnosis-treatment.html">診斷與治療</a></li>
         <li><a href="daily-life.html">生活照護</a></li>
         <li><a href="faq.html">常見問答</a></li>
-        <li><a href="resources.html">資源與聯絡</a></li>
+        <li><a href="resources.html">聯絡與資源</a></li>
       </ul>
     </nav>
   </div>
@@ -36,67 +40,62 @@
 <main id="main">
 <div class="page-intro">
   <h1>法布瑞氏症怎麼遺傳？</h1>
-  <p class="lead">法布瑞氏症是<strong>性聯遺傳</strong>疾病，致病基因（GLA 基因）位在 X 染色體上。</p>
+  <p class="lead">法布瑞氏症是<strong>X 染色體性聯遺傳</strong>疾病，致病的 GLA 基因位在 X 染色體上。</p>
 </div>
 
 <div class="key-points">
   <strong class="label">本頁重點</strong>
   <ul>
     <li>父親是患者：只會遺傳給女兒，不會遺傳給兒子。</li>
-    <li>母親是帶因者：每一胎不論男女，都有 50% 機率遺傳到。</li>
-    <li>女性帶因者也可能出現症狀，不是「只帶基因、不會生病」。</li>
+    <li>母親帶有變異：每一胎不論男女，都有 50% 機率遺傳到。</li>
+    <li>女性帶有變異也可能出現症狀，包括心臟病變，同樣需要追蹤。</li>
   </ul>
 </div>
 
-<section id="x-linked" data-source="vghtpe">
-<p class="source-tag">內容整理自北榮衛教資料</p>
+<section id="x-linked">
 <h2>為什麼男性影響較大？</h2>
-<p>男性只有一條 X 染色體（XY），女性則有兩條（XX）。當男性唯一的 X 染色體帶有缺陷，就沒有另一條正常的 X 可以補足，所以<strong>對男性的影響較大</strong>。</p>
-<p>女性帶因者（一條 X 染色體有缺陷、另一條正常）有時也會出現疾病的某些症狀，但通常較輕微。</p>
-<p>遺傳的規則是：<strong>若父親的 X 染色體帶有法布瑞氏症基因，只會遺傳給女兒；若母親其中一條 X 染色體帶有法布瑞氏症基因，則每個孩子（不論兒女）都有 50% 機率遺傳到。</strong></p>
+<p>男性只有一條 X 染色體（XY），女性有兩條（XX）。男性唯一的 X 有變異時，沒有另一條正常的 X 可以補足，所以<strong>男性通常症狀較早、較嚴重</strong>。</p>
+<p>女性有一條正常的 X，症狀通常較輕或較晚出現，但仍有不少女性會出現心臟、腎臟等器官病變，不能當作「只是帶因、不會生病」。</p>
 </section>
 
-<section data-source="vghtpe" aria-labelledby="tool-title">
-<p class="source-tag">內容整理自北榮衛教資料</p>
+<section aria-labelledby="tool-title">
 <h2 id="tool-title">互動圖解：孩子會遺傳到嗎？</h2>
 <p>請選擇是哪一位家長帶有致病基因：</p>
 <div id="genetics-tool" hidden>
   <div class="choice-group" role="group" aria-label="選擇帶有致病基因的家長">
-    <button class="btn secondary" type="button" data-scenario="mother" aria-pressed="false">母親是帶因者</button>
+    <button class="btn secondary" type="button" data-scenario="mother" aria-pressed="false">母親帶有變異</button>
     <button class="btn secondary" type="button" data-scenario="father" aria-pressed="false">父親是患者</button>
   </div>
   <h3>父母</h3>
   <div id="gen-parents" class="parents"></div>
   <h3>可能的孩子（四種機會均等）</h3>
   <div id="gen-children" class="punnett"></div>
-  <div class="legend" aria-hidden="true"><span class="l-affected">患者</span><span class="l-carrier">帶因者（可能有症狀）</span><span>未帶有變異</span></div>
+  <div class="legend" aria-hidden="true"><span class="l-affected">患者</span><span class="l-carrier">帶有變異（可能有症狀）</span><span>未帶有變異</span></div>
   <p class="summary-text" id="gen-summary" role="status" aria-live="polite"></p>
   <p><small>圖中畫波浪底線的 <span style="color:var(--primary);text-decoration:underline wavy;text-underline-offset:4px;font-weight:700">X</span> 代表帶有變異的 X 染色體。</small></p>
 </div>
 <noscript>
   <ul>
-    <li>母親是帶因者：兒子 50% 機率是患者；女兒 50% 機率是帶因者。</li>
-    <li>父親是患者：女兒 100% 是帶因者；兒子不會遺傳到。</li>
+    <li>母親帶有變異：兒子 50% 機率是患者；女兒 50% 機率帶有變異。</li>
+    <li>父親是患者：女兒 100% 帶有變異；兒子不會遺傳到。</li>
   </ul>
 </noscript>
 </section>
 
-<section id="female" data-source="vghtpe">
-<p class="source-tag">內容整理自北榮衛教資料</p>
-<h2>女性帶因者的酵素檢測</h2>
-<p>女性帶因者的酵素活性差異很大，這和女性兩條 X 染色體中，每個細胞會<strong>隨機關閉其中一條</strong>（X 染色體隨機不活化）有關。因此單靠酵素活性檢測，無法完全確認女性是否為帶因者，需要搭配<a href="diagnosis-treatment.html#confirm">基因檢測</a>。</p>
+<section id="female">
+<h2>女性的檢查方式不同</h2>
+<p>女性每個細胞會隨機關閉兩條 X 染色體中的一條（X 染色體隨機不活化），所以女性的酵素活性可能正常，也可能偏低。<strong>單靠酵素檢測無法確認女性是否帶有變異</strong>，需要做<a href="diagnosis-treatment.html#confirm">基因檢測</a>。</p>
 </section>
 
-<section id="family" class="needs-review" data-source="draft">
-<p class="source-tag">初稿・待醫師審閱</p>
+<section id="family">
 <h2>家人要不要檢查？</h2>
-<p>當家中有一人確診，代表其他家人也可能帶有相同的基因變異。建議：</p>
+<p>家中有一人確診，代表其他家人也可能帶有相同的變異。建議：</p>
 <ul>
-  <li>由醫師或遺傳諮詢師協助畫出家族譜，找出可能帶有基因的親屬（例如病人的母親、兄弟姊妹、女兒，及母系親屬）。</li>
-  <li>有需要的家人安排基因檢測；即使目前沒有症狀，及早知道也能及早追蹤。</li>
+  <li>由醫師協助畫出家族譜，找出可能帶有變異的親屬（例如病人的母親、兄弟姊妹、女兒，以及母系親屬）。</li>
+  <li>有需要的家人安排基因檢測；即使目前沒有症狀，及早知道就能及早開始心臟與腎臟追蹤。</li>
   <li>計畫懷孕前，可先接受遺傳諮詢，了解生育選擇。</li>
 </ul>
-<p>北榮遺傳諮詢中心的聯絡方式請見 <a href="resources.html">資源與聯絡</a>。</p>
+<p>三軍總醫院心臟內科的聯絡方式請見 <a href="resources.html">聯絡與資源</a>。</p>
 </section>
 <nav class="page-nav" aria-label="上一頁／下一頁">
   <a class="prev" href="symptoms.html"><small>上一頁</small>← 症狀</a>
@@ -105,8 +104,13 @@
 </main>
 <footer class="site-footer">
   <div class="footer-inner">
-    <p><strong>本網站僅供衛教參考，不能取代醫師的診斷與治療。</strong>如有身體不適或用藥疑問，請諮詢您的醫療團隊。</p>
-    <p>內容主要參考臺北榮民總醫院遺傳諮詢中心／兒童醫學部〈法布瑞氏症 Fabry Disease〉衛教資料（最後更新 2024/03/15）整理；標示「初稿・待醫師審閱」的段落為補充內容，尚待醫師確認。本網站並非醫院官方網站。</p>
+    <div class="footer-logos">
+      <img src="assets/img/logo-tsgh.png" alt="三軍總醫院標誌" width="64" height="64" loading="lazy">
+      <img src="assets/img/logo-cardiology.png" alt="三軍總醫院心臟內科標誌" width="64" height="64" loading="lazy">
+    </div>
+    <p><strong>本網站內容僅供衛教參考，不能取代醫師的診斷與治療。</strong></p>
+    <p>如有身體不適或用藥疑問，請諮詢您的醫療團隊。</p>
+    <p class="copyright">Copyright © 2026｜本網站由 BKZ 製作，三軍總醫院心臟內科版權所有</p>
   </div>
 </footer>
 </body>

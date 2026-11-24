@@ -11,12 +11,12 @@
   var PERSON = {
     dadAffected: { fig: '👨', label: '父親', chromo: ['X*', 'Y'], status: '患者', cls: 'affected' },
     dadNormal: { fig: '👨', label: '父親', chromo: ['X', 'Y'], status: '未帶有變異', cls: '' },
-    momCarrier: { fig: '👩', label: '母親', chromo: ['X*', 'X'], status: '帶因者（可能有症狀）', cls: 'carrier' },
+    momCarrier: { fig: '👩', label: '母親', chromo: ['X*', 'X'], status: '帶有變異（可能有症狀）', cls: 'carrier' },
     momNormal: { fig: '👩', label: '母親', chromo: ['X', 'X'], status: '未帶有變異', cls: '' },
     son: { fig: '👦', label: '兒子', chromo: ['X', 'Y'], status: '未帶有變異', cls: '' },
     sonAffected: { fig: '👦', label: '兒子', chromo: ['X*', 'Y'], status: '患者', cls: 'affected' },
     daughter: { fig: '👧', label: '女兒', chromo: ['X', 'X'], status: '未帶有變異', cls: '' },
-    daughterCarrier: { fig: '👧', label: '女兒', chromo: ['X*', 'X'], status: '帶因者（可能有症狀）', cls: 'carrier' }
+    daughterCarrier: { fig: '👧', label: '女兒', chromo: ['X*', 'X'], status: '帶有變異（可能有症狀）', cls: 'carrier' }
   };
 
   var SCENARIOS = {
@@ -28,7 +28,7 @@
     mother: {
       parents: ['dadNormal', 'momCarrier'],
       children: ['daughterCarrier', 'daughter', 'sonAffected', 'son'],
-      summary: '母親是帶因者時：母親會隨機傳給孩子兩條 X 染色體中的一條，所以「每一胎」不論男女，都有 50% 機率遺傳到致病基因。遺傳到的兒子為患者，遺傳到的女兒為帶因者，也可能出現症狀。'
+      summary: '母親帶有變異時：母親會隨機傳給孩子兩條 X 染色體中的一條，所以「每一胎」不論男女，都有 50% 機率遺傳到致病基因。遺傳到的兒子為患者，遺傳到的女兒也帶有變異，同樣可能出現症狀。'
     }
   };
 
